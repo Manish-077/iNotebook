@@ -18,13 +18,18 @@ const Navbar = () => {
     }, []);
 
     useEffect(() => {
-        const checkAuth = () => {
-            const token = localStorage.getItem('token');
-            setIsLoggedIn(!!token);
-        };
-        checkAuth();
-        const interval = setInterval(checkAuth, 1000); // Periodically check auth status
-        return () => clearInterval(interval);
+        // This function updates the login state.
+        const updateAuthStatus = () => setIsLoggedIn(!!localStorage.getItem('token'));
+
+        // Call it once to set the initial state.
+        updateAuthStatus();
+
+        // Listen for the 'storage' event which fires when another tab changes localStorage.
+        // This keeps the navbar in sync if the user logs in/out in another tab.
+        window.addEventListener('storage', updateAuthStatus);
+
+        // Clean up the event listener when the component unmounts.
+        return () => window.removeEventListener('storage', updateAuthStatus);
     }, [location]);
 
     const toggleMobileMenu = () => {

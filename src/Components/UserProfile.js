@@ -18,7 +18,7 @@ const UserProfile = ({ showAlert }) => {
           return;
         }
 
-        const response = await fetch('http://localhost:5000/api/auth/getuser', {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/auth/getuser`, {
           method: 'GET',
           headers: {
             'auth-token': token
@@ -46,7 +46,11 @@ const UserProfile = ({ showAlert }) => {
     };
 
     fetchUserInfo();
-  }, [navigate, showAlert]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // Note: `showAlert` is excluded from the dependency array. If it were included,
+    // it could cause this effect to re-run on every parent render unless it's
+    // memoized with `useCallback` in the parent component.
+  }, [navigate]);
 
   const handleLogout = () => {
     localStorage.removeItem('token');

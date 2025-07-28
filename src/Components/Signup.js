@@ -44,7 +44,7 @@ const Signup = ({ showAlert }) => {
 
     try {
       const { name, email, password } = credentials;
-      const response = await fetch("http://localhost:5000/api/auth/createuser", {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/auth/createuser`, {
         method: "POST",
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, email, password })

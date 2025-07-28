@@ -7,7 +7,7 @@ const AddNote = ({ showAlert }) => {
     const [note, setNote] = useState({title: "", description: "", tag: "default"})
     const [isSubmitting, setIsSubmitting] = useState(false);
     
-    const handleclick = async (e) => {
+    const handleClick = async (e) => {
         e.preventDefault();
         setIsSubmitting(true);
         try {
@@ -26,7 +26,7 @@ const AddNote = ({ showAlert }) => {
         }
     }
     
-    const onchange = (e) => {
+    const onChange = (e) => {
         setNote({...note, [e.target.name]: e.target.value})
     }
     
@@ -48,7 +48,7 @@ const AddNote = ({ showAlert }) => {
                 </h2>
             </div>
             
-            <form onSubmit={handleclick}>
+            <form onSubmit={handleClick}>
                 <div style={{ marginBottom: 'var(--spacing-4)' }}>
                     <label htmlFor="title" className="form-label" style={{ fontWeight: '500' }}>Title</label>
                     <input 
@@ -57,7 +57,7 @@ const AddNote = ({ showAlert }) => {
                         id="title" 
                         name='title' 
                         value={note.title}
-                        onChange={onchange}
+                        onChange={onChange}
                         placeholder="Enter note title..."
                         style={{
                             padding: 'var(--spacing-4)',
@@ -77,7 +77,7 @@ const AddNote = ({ showAlert }) => {
                         id="description" 
                         name='description' 
                         value={note.description}
-                        onChange={onchange}
+                        onChange={onChange}
                         placeholder="Write your note content here..."
                         rows="4"
                         style={{
@@ -101,7 +101,7 @@ const AddNote = ({ showAlert }) => {
                         id="tag" 
                         name='tag' 
                         value={note.tag}
-                        onChange={onchange}
+                        onChange={onChange}
                         placeholder="Enter a tag (optional)"
                         style={{
                             padding: 'var(--spacing-4)',

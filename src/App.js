@@ -10,8 +10,8 @@ import {
   Route
 } from "react-router-dom";
 import NoteState from './context/notes/NoteState';
-import Login from '../Components/Login';
-import Signup from '../Components/Signup';
+import Login from './Components/Login';
+import Signup from './Components/Signup';
 import { useState } from 'react';
 import UserProfile from './Components/UserProfile';
 import ProtectedRoute from './Components/ProtectedRoute';
