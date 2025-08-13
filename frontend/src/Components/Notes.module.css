@@ -1,0 +1,58 @@
+.notesContainer {
+    margin-top: var(--spacing-8);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: var(--spacing-8);
+    padding: var(--spacing-8) 0;
+}
+
+.header h2 {
+    color: var(--secondary-color);
+    font-weight: 600;
+    font-size: var(--font-size-3xl);
+}
+
+.header p {
+    color: var(--gray-600);
+    font-size: var(--font-size-lg);
+    max-width: 600px;
+    margin: var(--spacing-3) auto 0;
+}
+
+.emptyNotesContainer {
+    text-align: center;
+    padding: var(--spacing-16) var(--spacing-4);
+    background-color: var(--white);
+    border-radius: var(--radius-xl);
+    border: 1px dashed var(--gray-300);
+}
+
+.emptyNotesIcon {
+    font-size: var(--font-size-4xl);
+    color: var(--primary-light);
+    margin-bottom: var(--spacing-4);
+}
+
+.emptyNotesContainer h3 {
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+.emptyNotesContainer p {
+    color: var(--gray-600);
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.loadingContainer, .errorContainer {
+    text-align: center;
+    padding: var(--spacing-16) 0;
+    font-size: var(--font-size-lg);
+    color: var(--gray-600);
+}
+
+.modalIcon {
+    color: var(--primary-color);
+}
